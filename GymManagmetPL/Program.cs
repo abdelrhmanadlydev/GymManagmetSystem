@@ -21,10 +21,13 @@ namespace GymManagmetPL
             });
 
             // Configure Generic Repository for Dependency Injection
-            builder.Services.AddScoped(typeof(IGenericRepository<>) ,typeof(GenericRepository<>));
+            //builder.Services.AddScoped(typeof(IGenericRepository<>) ,typeof(GenericRepository<>));
 
             // Configure Plane Repository for Dependency Injection
-            builder.Services.AddScoped<IPlaneRepository, PlaneRepository>();
+            //builder.Services.AddScoped<IPlaneRepository, PlaneRepository>();
+
+            // Configure Unit of Work for Dependency Injection
+            builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
             var app = builder.Build();
 
