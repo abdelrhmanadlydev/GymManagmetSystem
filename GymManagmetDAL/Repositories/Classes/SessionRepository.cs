@@ -29,5 +29,12 @@ namespace GymManagmetDAL.Repositories.Classes
         {
             return _dbContext.MemberSessions.Where(s => s.SessionId == sessionId).Count();
         }
+
+        public Session? GetSessionWithTrainerAndCategory(int id)
+        {
+            return _dbContext.Sessions.Include(s => s.SessionTrainer)
+                                      .Include(s => s.SessionCategory)
+                                      .FirstOrDefault(s => s.Id == id);
+        }
     }
 }

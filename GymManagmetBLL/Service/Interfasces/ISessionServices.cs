@@ -1,4 +1,4 @@
-﻿using GymManagmetBLL.Service.ViewModels.SessionViewModel;
+﻿using GymManagmetBLL.ViewModels.SessionViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,5 +10,10 @@ namespace GymManagmetBLL.Service.Interfasces
     public interface ISessionServices
     {
         IEnumerable<SessionViewModel> GetAllSessions();
+        SessionViewModel? GetSessionById(int id);
+        bool CreateSession(CreateSessionVeiwModel createSession);
+        UpdateSessionVeiwModel? GetSessionForUpdate(int id);
+        bool UpdateSession(int id, UpdateSessionVeiwModel updateSession);
+        bool RemoveSession(int id);
     }
 }

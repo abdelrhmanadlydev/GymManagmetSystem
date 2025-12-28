@@ -1,3 +1,6 @@
+using GymManagmetBLL.AutoMapper;
+using GymManagmetBLL.Service.Classes;
+using GymManagmetBLL.Service.Interfasces;
 using GymManagmetDAL.Data.Context;
 using GymManagmetDAL.Data.DataSeeding;
 using GymManagmetDAL.Repositories.Classes;
@@ -30,6 +33,9 @@ namespace GymManagmetPL
             // Configure Unit of Work for Dependency Injection
             builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
             builder.Services.AddScoped<ISessionRepository, SessionRepository>();
+            builder.Services.AddScoped<IAnalutiysService, AnalutiysService>();
+            // Configure AutoMapper
+            builder.Services.AddAutoMapper(x=>x.AddProfile(new MapingProfile()));
 
             var app = builder.Build();
 
