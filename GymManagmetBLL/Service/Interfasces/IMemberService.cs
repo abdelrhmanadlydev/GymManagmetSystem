@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace GymManagmetBLL.Service.Interfasces
 {
-    internal interface IMemberService
+    public interface IMemberService
     {
         IEnumerable<MemberViewModels> GetAllMembers();
         bool CreateMember(CreateMemberViewModel createMember);

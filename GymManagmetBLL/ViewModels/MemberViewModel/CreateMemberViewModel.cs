@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace GymManagmetBLL.ViewModels.MemberViewModel
 {
-    internal class CreateMemberViewModel
+    public class CreateMemberViewModel
     {
         [Required(ErrorMessage = "Name Is Required!")]
         [StringLength(maximumLength: 50, MinimumLength = 2, ErrorMessage = "Name Must Be Between 2 and 30 Chars!")]
@@ -22,9 +22,13 @@ namespace GymManagmetBLL.ViewModels.MemberViewModel
         [DataType(DataType.EmailAddress)]
         public string Email { get; set; } = null!;
 
+        //[Required(ErrorMessage = "Phone Is Required!")]
+        //[Phone(ErrorMessage = "Invalid Phone Number!")]
+        //[RegularExpression(@"^(\+201)[0-2|5]\d{8}$", ErrorMessage = "Phone Number Must Be Valid Egyptian PhoneNumber!")]
+        //[DataType(DataType.PhoneNumber)]
+        //public string Phone { get; set; } = null!;
         [Required(ErrorMessage = "Phone Is Required!")]
-        [Phone(ErrorMessage = "Invalid Phone Number!")]
-        [RegularExpression(@"^(\+201)[0-2|5]\d{8}$", ErrorMessage = "Phone Number Must Be Valid Egyptian PhoneNumber!")]
+        [RegularExpression(@"^01[0125]\d{8}$",ErrorMessage = "Phone Number Must Be Valid Egyptian Phone Number!")]
         [DataType(DataType.PhoneNumber)]
         public string Phone { get; set; } = null!;
 

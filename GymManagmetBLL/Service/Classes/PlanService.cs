@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace GymManagmetBLL.Service.Classes
 {
-    internal class PlanService : IPlanServices
+    public class PlanService : IPlanServices
     {
         private readonly IUnitOfWork _unitOfWork;
         public PlanService(IUnitOfWork unitOfWork)
